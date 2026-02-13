@@ -1,6 +1,0 @@
-﻿chore: commit inicial
-
-- Inicializa repositorio y añade archivos base.
-- Añade configuración de Astro y package.json.
-- Incluye carpetas src y public con contenido inicial.
-- Prepara proyecto para desarrollo local.
