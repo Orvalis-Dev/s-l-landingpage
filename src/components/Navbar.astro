@@ -17,7 +17,6 @@
 
   <nav id="mobile-menu" class="mobile-menu" aria-label="Menú móvil" hidden>
     <button class="menu-close" type="button" aria-label="Cerrar menú">✕</button>
-    <a href="#inicio">Inicio</a>
     <a href="#servicios">Servicios</a>
     <a href="#productos">Productos</a>
     <a href="#catalogo">Catálogo</a>
@@ -29,32 +28,77 @@
   const toggle = document.querySelector('.menu-toggle');
   const close = document.querySelector('.menu-close');
   const menu = document.querySelector('#mobile-menu');
+  const header = document.querySelector('.site-header');
+  const desktopMedia = window.matchMedia('(min-width: 1024px)');
   const links = menu?.querySelectorAll('a') ?? [];
 
+  const updateHeaderOnScroll = () => {
+    if (window.scrollY > 14) {
+      header?.classList.add('scrolled');
+      return;
+    }
+
+    header?.classList.remove('scrolled');
+  };
+
   const openMenu = () => {
+    if (desktopMedia.matches) {
+      return;
+    }
+
     menu?.removeAttribute('hidden');
     toggle?.setAttribute('aria-expanded', 'true');
+    header?.classList.add('menu-open');
     document.body.style.overflow = 'hidden';
   };
 
   const closeMenu = () => {
     menu?.setAttribute('hidden', '');
     toggle?.setAttribute('aria-expanded', 'false');
+    header?.classList.remove('menu-open');
     document.body.style.overflow = '';
+  };
+
+  const syncMenuByViewport = () => {
+    if (desktopMedia.matches) {
+      closeMenu();
+    }
   };
 
   toggle?.addEventListener('click', openMenu);
   close?.addEventListener('click', closeMenu);
   links.forEach((link) => link.addEventListener('click', closeMenu));
+  window.addEventListener('scroll', updateHeaderOnScroll, { passive: true });
+  desktopMedia.addEventListener('change', syncMenuByViewport);
+  updateHeaderOnScroll();
+  syncMenuByViewport();
 </script>
 
 <style>
   .site-header {
-    position: sticky;
+    position: fixed;
     top: 0;
+    left: 0;
+    width: 100%;
     z-index: 20;
-    border-bottom: 1px solid #2c2c2c;
-    background-color: rgba(17, 17, 17, 0.95);
+    border-bottom: 1px solid rgba(242, 183, 5, 0.18);
+    background: transparent;
+    backdrop-filter: blur(0);
+    transition:
+      background-color 0.25s ease,
+      border-color 0.25s ease,
+      backdrop-filter 0.25s ease;
+  }
+
+  .site-header.scrolled {
+    background-color: rgba(0, 0, 0, 0.85);
+    border-bottom-color: rgba(68, 68, 68, 0.72);
+    backdrop-filter: blur(8px);
+  }
+
+  .site-header.menu-open {
+    background-color: rgba(10, 10, 10, 0.94);
+    border-bottom-color: rgba(68, 68, 68, 0.8);
     backdrop-filter: blur(6px);
   }
 
@@ -69,12 +113,15 @@
   .brand {
     font-family: var(--font-subheading);
     font-weight: 700;
+    font-size: 0.95rem;
+    max-width: 13.5rem;
+    line-height: 1.2;
   }
 
   .menu-toggle,
   .menu-close {
     border: 1px solid #3c3c3c;
-    background: transparent;
+    background: rgba(17, 17, 17, 0.5);
     color: var(--color-light);
     border-radius: 0.5rem;
     padding: 0.4rem 0.65rem;
@@ -82,10 +129,18 @@
     cursor: pointer;
   }
 
+  .menu-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
   .desktop-nav {
     display: none;
     gap: 1.5rem;
     font-family: var(--font-subheading);
+    font-weight: 600;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.35);
   }
 
   .desktop-nav a:hover {
@@ -95,14 +150,21 @@
   .mobile-menu {
     position: fixed;
     inset: 0;
+    z-index: 30;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 1.5rem;
-    background-color: var(--color-dark);
+    gap: 2rem;
+    background: #111111;
     font-family: var(--font-subheading);
-    font-size: 1.7rem;
+    font-size: 1.6rem;
+    animation: menu-enter 250ms ease-out;
+  }
+
+  .mobile-menu a {
+    color: var(--color-light);
+    transition: color 0.3s ease;
   }
 
   .mobile-menu a:hover {
@@ -115,7 +177,26 @@
     right: 1.5rem;
   }
 
+  @keyframes menu-enter {
+    from {
+      opacity: 0;
+      transform: translateY(0.35rem);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
   @media (min-width: 768px) {
+    .brand {
+      font-size: 1rem;
+      max-width: 16rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
     .menu-toggle,
     .mobile-menu {
       display: none;
@@ -123,6 +204,11 @@
 
     .desktop-nav {
       display: flex;
+    }
+
+    .brand {
+      font-size: 1.02rem;
+      max-width: none;
     }
   }
 </style>
