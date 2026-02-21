@@ -1,0 +1,128 @@
+<header class="site-header" id="inicio">
+  <div class="container nav-wrap">
+    <a href="#inicio" class="brand" aria-label="Ir al inicio">S&L Servicios Industriales</a>
+
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-menu">
+      <span class="sr-only">Abrir menú</span>
+      ☰
+    </button>
+
+    <nav class="desktop-nav" aria-label="Principal">
+      <a href="#servicios">Servicios</a>
+      <a href="#productos">Productos</a>
+      <a href="#catalogo">Catálogo</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+  </div>
+
+  <nav id="mobile-menu" class="mobile-menu" aria-label="Menú móvil" hidden>
+    <button class="menu-close" type="button" aria-label="Cerrar menú">✕</button>
+    <a href="#inicio">Inicio</a>
+    <a href="#servicios">Servicios</a>
+    <a href="#productos">Productos</a>
+    <a href="#catalogo">Catálogo</a>
+    <a href="#contacto">Contacto</a>
+  </nav>
+</header>
+
+<script>
+  const toggle = document.querySelector('.menu-toggle');
+  const close = document.querySelector('.menu-close');
+  const menu = document.querySelector('#mobile-menu');
+  const links = menu?.querySelectorAll('a') ?? [];
+
+  const openMenu = () => {
+    menu?.removeAttribute('hidden');
+    toggle?.setAttribute('aria-expanded', 'true');
+    document.body.style.overflow = 'hidden';
+  };
+
+  const closeMenu = () => {
+    menu?.setAttribute('hidden', '');
+    toggle?.setAttribute('aria-expanded', 'false');
+    document.body.style.overflow = '';
+  };
+
+  toggle?.addEventListener('click', openMenu);
+  close?.addEventListener('click', closeMenu);
+  links.forEach((link) => link.addEventListener('click', closeMenu));
+</script>
+
+<style>
+  .site-header {
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    border-bottom: 1px solid #2c2c2c;
+    background-color: rgba(17, 17, 17, 0.95);
+    backdrop-filter: blur(6px);
+  }
+
+  .nav-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 4.5rem;
+    gap: 1rem;
+  }
+
+  .brand {
+    font-family: var(--font-subheading);
+    font-weight: 700;
+  }
+
+  .menu-toggle,
+  .menu-close {
+    border: 1px solid #3c3c3c;
+    background: transparent;
+    color: var(--color-light);
+    border-radius: 0.5rem;
+    padding: 0.4rem 0.65rem;
+    font-size: 1.25rem;
+    cursor: pointer;
+  }
+
+  .desktop-nav {
+    display: none;
+    gap: 1.5rem;
+    font-family: var(--font-subheading);
+  }
+
+  .desktop-nav a:hover {
+    color: var(--color-primary);
+  }
+
+  .mobile-menu {
+    position: fixed;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+    background-color: var(--color-dark);
+    font-family: var(--font-subheading);
+    font-size: 1.7rem;
+  }
+
+  .mobile-menu a:hover {
+    color: var(--color-primary);
+  }
+
+  .menu-close {
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+  }
+
+  @media (min-width: 768px) {
+    .menu-toggle,
+    .mobile-menu {
+      display: none;
+    }
+
+    .desktop-nav {
+      display: flex;
+    }
+  }
+</style>

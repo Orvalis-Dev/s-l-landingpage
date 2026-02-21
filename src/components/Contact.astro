@@ -1,0 +1,77 @@
+<section class="section section-dark" id="contacto">
+  <div class="container grid grid-2 contact-grid">
+    <div>
+      <span class="eyebrow">Contacto</span>
+      <h2 class="section-title">Atención personalizada para su operación</h2>
+      <p class="section-text">
+        ¿Necesita asesoramiento o desea solicitar un producto? Contáctenos y reciba atención personalizada.
+      </p>
+      <a class="btn btn-primary" href="https://wa.me/5493810000000" target="_blank" rel="noreferrer">
+        Contactar Ahora
+      </a>
+    </div>
+
+    <div class="card contact-card">
+      <h3>Canales directos</h3>
+      <ul>
+        <li><strong>WhatsApp:</strong> +54 9 381 000 0000</li>
+        <li><strong>Email:</strong> contacto@slserviciosindustriales.com</li>
+        <li><strong>Zona de operación:</strong> San Miguel de Tucumán y Norte Argentino</li>
+      </ul>
+    </div>
+  </div>
+
+  <a class="whatsapp-float" href="https://wa.me/5493810000000" target="_blank" rel="noreferrer" aria-label="WhatsApp">
+    WhatsApp
+  </a>
+</section>
+
+<style>
+  .contact-grid {
+    align-items: start;
+  }
+
+  .contact-card h3 {
+    margin-bottom: 1rem;
+    font-family: var(--font-subheading);
+  }
+
+  .contact-card ul {
+    margin: 0;
+    padding-left: 1.1rem;
+    display: grid;
+    gap: 0.6rem;
+  }
+
+  .contact-grid .btn {
+    margin-top: 1.5rem;
+  }
+
+  .whatsapp-float {
+    position: fixed;
+    right: 1rem;
+    bottom: 1rem;
+    z-index: 15;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 8.2rem;
+    padding: 0.75rem 1rem;
+    border-radius: 999px;
+    background-color: var(--color-primary);
+    color: var(--color-dark);
+    font-family: var(--font-subheading);
+    font-weight: 700;
+  }
+
+  .whatsapp-float:hover {
+    background-color: #d39f04;
+  }
+
+  @media (min-width: 768px) {
+    .whatsapp-float {
+      right: 1.5rem;
+      bottom: 1.5rem;
+    }
+  }
+</style>

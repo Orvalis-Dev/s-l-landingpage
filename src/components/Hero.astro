@@ -1,0 +1,77 @@
+<section class="section section-dark hero">
+  <div class="container hero-grid">
+    <div>
+      <span class="eyebrow">S&L Servicios Industriales</span>
+      <h1>Soluciones Industriales Confiables Hace 20 Años</h1>
+      <div class="hero-line" aria-hidden="true"></div>
+      <p class="section-text hero-text">
+        Mantenimiento mecánico y provisión de elementos de protección personal para empresas del Norte Argentino.
+      </p>
+
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="https://wa.me/5493810000000" target="_blank" rel="noreferrer">
+          Solicitar Asesoramiento
+        </a>
+        <a class="btn btn-outline" href="#catalogo">Descargar Catálogo</a>
+      </div>
+    </div>
+
+    <div class="hero-image-wrap">
+      <!-- Reemplazar por imagen real de maquinaria/entorno industrial del cliente -->
+      <img
+        src="https://images.unsplash.com/photo-1581092335397-9583eb92d232?auto=format&fit=crop&w=1200&q=80"
+        alt="Entorno industrial con maquinaria"
+        loading="lazy"
+      />
+    </div>
+  </div>
+</section>
+
+<style>
+  .hero {
+    padding-top: 5rem;
+  }
+
+  .hero-grid {
+    display: grid;
+    gap: 2rem;
+  }
+
+  .hero-line {
+    width: 5.5rem;
+    height: 0.2rem;
+    margin: 1rem 0 1.5rem;
+    background-color: var(--color-primary);
+  }
+
+  .hero-text {
+    max-width: 52ch;
+  }
+
+  .hero-actions {
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .hero-image-wrap {
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    border: 1px solid #2f2f2f;
+  }
+
+  @media (min-width: 768px) {
+    .hero-actions {
+      flex-direction: row;
+      align-items: center;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .hero-grid {
+      grid-template-columns: 1.05fr 0.95fr;
+      align-items: center;
+    }
+  }
+</style>

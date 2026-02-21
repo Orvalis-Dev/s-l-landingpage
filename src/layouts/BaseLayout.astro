@@ -1,0 +1,39 @@
+---
+import '../styles/global.css';
+
+import '@fontsource/oswald/500.css';
+import '@fontsource/oswald/700.css';
+import '@fontsource/manrope/500.css';
+import '@fontsource/manrope/700.css';
+import '@fontsource/dm-sans/400.css';
+import '@fontsource/dm-sans/500.css';
+import '@fontsource/dm-sans/700.css';
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = 'S&L Servicios Industriales | Soluciones para el Norte Argentino',
+  description = 'Landing institucional de S&L Servicios Industriales. Soluciones técnicas, catálogo digital y contacto directo por WhatsApp.'
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description} />
+    <meta name="author" content="S&L Servicios Industriales" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>

@@ -1,0 +1,102 @@
+[
+  {
+    "id": 1,
+    "name": "Válvula Esférica de Acero Inoxidable",
+    "brand": "Klinger",
+    "category": "Válvulas",
+    "description": "Alta presión y temperatura",
+    "stock": true,
+    "specs": "DN 50-300 | PN 16-40",
+    "image": "https://placehold.co/400x400/1e293b/FFD700?text=Valvula+Esferica"
+  },
+  {
+    "id": 2,
+    "name": "Casco de Seguridad Clase E",
+    "brand": "3M",
+    "category": "Seguridad",
+    "description": "Protección eléctrica certificada",
+    "stock": true,
+    "specs": "ANSI Z89.1 | Dieléctrico",
+    "image": "https://placehold.co/400x400/1e293b/FFD700?text=Casco+3M"
+  },
+  {
+    "id": 3,
+    "name": "Junta de Expansión de Goma",
+    "brand": "Flexseal",
+    "category": "Sellado",
+    "description": "Compensación de movimientos",
+    "stock": false,
+    "specs": "EPDM | NBR | Viton",
+    "image": "https://placehold.co/400x400/1e293b/FFD700?text=Junta+Flexseal"
+  },
+  {
+    "id": 4,
+    "name": "Traba Anaeróbica 243",
+    "brand": "Trabasil",
+    "category": "Químicos",
+    "description": "Fuerza media, desmontable",
+    "stock": true,
+    "specs": "50ml | Resistencia: 16 N·m",
+    "image": "https://placehold.co/400x400/1e293b/FFD700?text=Trabasil+243"
+  },
+  {
+    "id": 5,
+    "name": "Cinta Transportadora Kausteel",
+    "brand": "Kauman",
+    "category": "Cintas",
+    "description": "Con cables de acero ST-1250",
+    "stock": false,
+    "specs": "Ancho: 800-1400mm",
+    "image": "https://placehold.co/400x400/1e293b/FFD700?text=Cinta+Kauman"
+  },
+  {
+    "id": 6,
+    "name": "Válvula Mariposa Wafer",
+    "brand": "PNR",
+    "category": "Válvulas",
+    "description": "Disco de acero inoxidable",
+    "stock": true,
+    "specs": "DN 40-600 | PN 10/16",
+    "image": "https://placehold.co/400x400/1e293b/FFD700?text=Valvula+Mariposa"
+  },
+  {
+    "id": 7,
+    "name": "Respirador Media Máscara",
+    "brand": "Honeywell",
+    "category": "Seguridad",
+    "description": "Filtros P100 intercambiables",
+    "stock": true,
+    "specs": "Protección contra polvo/humos",
+    "image": "https://placehold.co/400x400/1e293b/FFD700?text=Respirador"
+  },
+  {
+    "id": 8,
+    "name": "Zorra Hidráulica Industrial",
+    "brand": "Indubol",
+    "category": "Equipos",
+    "description": "Capacidad 2500 kg",
+    "stock": false,
+    "specs": "Ruedas de poliuretano",
+    "image": "https://placehold.co/400x400/1e293b/FFD700?text=Zorra+Industrial"
+  },
+  {
+    "id": 9,
+    "name": "Silicona RTV Alta Temperatura",
+    "brand": "Siloc",
+    "category": "Químicos",
+    "description": "Resistente hasta 315°C",
+    "stock": true,
+    "specs": "85g | Color: Rojo",
+    "image": "https://placehold.co/400x400/1e293b/FFD700?text=Silicona+RTV"
+  },
+  {
+    "id": 10,
+    "name": "Empaquetadura de Grafito",
+    "brand": "Klinger",
+    "category": "Sellado",
+    "description": "Sin asbesto, alta densidad",
+    "stock": true,
+    "specs": "Temp: -200°C a +650°C",
+    "image": "https://placehold.co/400x400/1e293b/FFD700?text=Empaquetadura"
+  }
+]

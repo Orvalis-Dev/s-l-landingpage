@@ -1,0 +1,44 @@
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <p>S&L Servicios Industriales | San Miguel de Tucumán | Norte Argentino</p>
+    <p>
+      <a href="mailto:contacto@slserviciosindustriales.com">contacto@slserviciosindustriales.com</a>
+      | <a href="https://wa.me/5493810000000" target="_blank" rel="noreferrer">WhatsApp</a>
+    </p>
+    <p>Desarrollado por Orvalis</p>
+  </div>
+</footer>
+
+<style>
+  .site-footer {
+    padding: 1.5rem 0;
+    background-color: #0b0b0b;
+    border-top: 1px solid #252525;
+    font-size: 0.9rem;
+  }
+
+  .footer-grid {
+    display: grid;
+    gap: 0.75rem;
+  }
+
+  .footer-grid p {
+    margin: 0;
+    color: #b9b9b9;
+  }
+
+  .footer-grid a:hover {
+    color: var(--color-primary);
+  }
+
+  @media (min-width: 1024px) {
+    .footer-grid {
+      grid-template-columns: 1.3fr 1fr 0.8fr;
+      align-items: center;
+    }
+
+    .footer-grid p:last-child {
+      text-align: right;
+    }
+  }
+</style>

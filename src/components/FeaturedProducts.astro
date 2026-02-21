@@ -1,0 +1,91 @@
+---
+const products = [
+  {
+    name: 'Guantes de Seguridad Industrial',
+    description: 'Protección para tareas de alto desgaste en entornos técnicos.',
+    image:
+      'https://images.unsplash.com/photo-1584463694862-f3f9c56a4f3f?auto=format&fit=crop&w=1000&q=80'
+  },
+  {
+    name: 'Cascos y Protección Facial',
+    description: 'Soluciones de protección personal para operación en planta.',
+    image:
+      'https://images.unsplash.com/photo-1581092921461-7031e4db9b95?auto=format&fit=crop&w=1000&q=80'
+  },
+  {
+    name: 'Herramientas de Mantenimiento',
+    description: 'Equipamiento técnico para mantenimiento mecánico profesional.',
+    image:
+      'https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&w=1000&q=80'
+  },
+  {
+    name: 'Válvulas y Conexiones',
+    description: 'Componentes para líneas industriales y sistemas de conducción.',
+    image:
+      'https://images.unsplash.com/photo-1565060169187-70f5634d7e45?auto=format&fit=crop&w=1000&q=80'
+  },
+  {
+    name: 'Accesorios de Seguridad',
+    description: 'Elementos complementarios para reforzar protocolos de seguridad.',
+    image:
+      'https://images.unsplash.com/photo-1602015575657-c8d2ef4b6f77?auto=format&fit=crop&w=1000&q=80'
+  },
+  {
+    name: 'Insumos Industriales Varios',
+    description: 'Abastecimiento técnico para distintos tipos de operación industrial.',
+    image:
+      'https://images.unsplash.com/photo-1565043666747-69f6646db940?auto=format&fit=crop&w=1000&q=80'
+  }
+];
+---
+
+<section class="section section-light" id="productos">
+  <div class="container">
+    <span class="eyebrow">Productos Destacados</span>
+    <h2 class="section-title">Catálogo técnico orientado a la operación real</h2>
+
+    <div class="grid grid-3 product-grid">
+      {
+        products.map((product) => (
+          <article class="card product-card">
+            <!-- Reemplazar por imagen real del producto correspondiente -->
+            <img src={product.image} alt={product.name} loading="lazy" />
+            <div class="product-body">
+              <h3>{product.name}</h3>
+              <p>{product.description}</p>
+              <a class="btn btn-primary" href="https://wa.me/5493810000000" target="_blank" rel="noreferrer">
+                Consultar por WhatsApp
+              </a>
+            </div>
+          </article>
+        ))
+      }
+    </div>
+  </div>
+</section>
+
+<style>
+  .product-grid {
+    margin-top: 2rem;
+  }
+
+  .product-card {
+    padding: 0;
+    overflow: hidden;
+  }
+
+  .product-card img {
+    aspect-ratio: 16 / 11;
+    object-fit: cover;
+  }
+
+  .product-body {
+    display: grid;
+    gap: 0.9rem;
+    padding: 1.25rem;
+  }
+
+  .product-body h3 {
+    font-size: 1.1rem;
+  }
+</style>
